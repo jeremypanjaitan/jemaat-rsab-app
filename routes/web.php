@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Persembahan\AllPersembahan;
 use App\Http\Livewire\Persembahan\Hitung;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/persembahan', AllPersembahan::class)->name('persembahan.all');
     Route::get('/persembahan/hitung', Hitung::class)->name('persembahan.hitung');
 });
