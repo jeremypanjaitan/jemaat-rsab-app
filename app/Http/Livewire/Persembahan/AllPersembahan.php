@@ -13,7 +13,7 @@ class AllPersembahan extends Component
     public function render()
     {
         return view('livewire.persembahan.all-persembahan', [
-            'allPersembahan' => Persembahan::paginate(10)
+            'allPersembahan' => Persembahan::latest()->paginate(5)
         ]);
     }
 }
