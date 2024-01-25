@@ -56,13 +56,11 @@
                                 <input type="text" class="form-control" readonly value="{{ $formattedTotal }}">
                             </div>
                             <button type="submit" class="btn btn-primary">Save</button>
+                            <a href="{{ url()->previous() }}" type="button" class="btn btn-secondary">back</a>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>

@@ -19,23 +19,30 @@ class Hitung extends Component
     public $total;
     public $formattedTotal;
 
+    public $route;
+
+    public function mount()
+    {
+        $this->route = url()->previous();
+    }
 
     public function save()
     {
         Persembahan::create(
             [
-                "seratus" => $this->seratus,
-                "limaRatus" => $this->limaRatus,
-                "seribu" => $this->seribu,
-                "duaRibu" => $this->duaRibu,
-                "limaRibu" => $this->limaRibu,
-                "sepuluhRibu" => $this->sepuluhRibu,
-                "duaPuluhRibu" => $this->duaPuluhRibu,
-                "limaPuluhRibu" => $this->limaPuluhRibu,
-                "seratusRibu" => $this->seratusRibu,
-                "total" => $this->total
+                "seratus" => $this->seratus ?? 0,
+                "limaRatus" => $this->limaRatus ?? 0,
+                "seribu" => $this->seribu ?? 0,
+                "duaRibu" => $this->duaRibu ?? 0,
+                "limaRibu" => $this->limaRibu ?? 0,
+                "sepuluhRibu" => $this->sepuluhRibu ?? 0,
+                "duaPuluhRibu" => $this->duaPuluhRibu ?? 0,
+                "limaPuluhRibu" => $this->limaPuluhRibu ?? 0,
+                "seratusRibu" => $this->seratusRibu ?? 0,
+                "total" => $this->total ?? 0
             ]
         );
+        return redirect($this->route)->with('toastState', 'show');
     }
 
     public function hitungPersembahan()
