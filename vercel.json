@@ -9,6 +9,10 @@
             "dest": "/public/build/"
         },
         {
+            "src": "/vendor/(.*)",
+            "dest": "/public/vendor/"
+        },
+        {
             "src": "/resources/(.*)",
             "dest": "/public/resources/"
         },
