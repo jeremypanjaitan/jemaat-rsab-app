@@ -19,7 +19,9 @@
                         <tbody>
                             @foreach ($allPersembahan as $persembahan)
                             <tr>
-                                <td>{{ $persembahan->created_at }}</td>
+                                <td>{{ $persembahan->created_at->setTimezone('Asia/Jakarta')->format('d M Y H:i')
+                                    }}
+                                </td>
                                 <td>Rp. {{ number_format($persembahan->total, 0, '.') }}</td>
                             </tr>
                             @endforeach
