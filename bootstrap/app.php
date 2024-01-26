@@ -52,4 +52,8 @@ $app->singleton(
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    $app->useStoragePath('/tmp');
+}
+
 return $app;
