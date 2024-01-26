@@ -11,7 +11,6 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
         "APP_URL": "https://laravel-vercel.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
